@@ -1,33 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import { Container, Typography } from '@mui/material';
-import './App.css';
-import AdminDashboard from './pages/Adminpage';
-import UserDashboard from './pages/Userpage';
+import { BrowserRouter as Router, Routes, Route,} from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Admin from './pages/Adminpage';
+import User from './pages/Userpage';
+import Landing from './pages/Landing/Landing';
+
+
 
 const App = () => {
+  
     return (
-        <Router>
-            <div className="app">
-                <Navbar />
-                <Switch>
-                    <Route exact path="/">
-                        <Container className="main-content" maxWidth="lg">
-                            <Typography variant="h2" component="h1" className="title">
-                                Shop Floor Management
-                            </Typography>
-                        </Container>
-                    </Route>
-                    <Route path="/admin">
-                        <AdminDashboard />
-                    </Route>
-                    <Route path="/user">
-                        <UserDashboard />
-                    </Route>
-                </Switch>
-            </div>
+        <>
+         
+         <Router>
+         <Navbar/>
+                <Routes>
+                        <Route path="*" excat element={<Landing />} />
+                        <Route path="/adminpage" element={<Admin />} />
+                        <Route path="/userpage" element={<User />} />
+                </Routes>
         </Router>
+        </>
     );
 };
 

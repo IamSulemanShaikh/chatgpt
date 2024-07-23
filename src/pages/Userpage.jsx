@@ -1,17 +1,14 @@
 import React from 'react';
-import { Typography, Container } from '@mui/material';
+import '../pages/Dashborad.css'
 
-const Userpage = () => {
+const UserDashboard = () => {
     return (
-        <Container>
-            <Typography variant="h4" gutterBottom>
-                User Dashboard
-            </Typography>
-            <Typography variant="body1">
-                Welcome to the User Dashboard!
-            </Typography>
-        </Container>
+        <div className="dashboard">
+            <h2>User Dashboard</h2>
+            <p>Welcome to the User Dashboard!</p>
+        </div>
     );
 };
 
-export default Userpage;
+export default UserDashboard;
+
